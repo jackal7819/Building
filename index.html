@@ -21,7 +21,7 @@
                         <a href="#about" class="menu__item">ABOUT US</a>
                         <a href="#projects" class="menu__item">PROJECTS</a>
                         <a href="#news" class="menu__item">NEWS</a>
-                        <a href="#contact" class="menu__item">CONTACT</a>
+                        <a href="#form" class="menu__item">CONTACT</a>
                     </div>
                 </nav>
                 <div class="icons">
@@ -63,13 +63,13 @@
             </div>
         </header>
     <main class="main">
-        <section class="projects">
+        <section class="projects" id="projects">
             <h2 class="projects__title">WHAT WE DO</h2>
             <article class="projects__item projects__item_trade">
-                <div class="projects__picture">
-                    <img src="./img/project1.webp" alt="building" class="projects__img">
+                <div class="projects__picture projects__picture_left">
+                    <img src="./img/project1.webp" alt="building" class="projects__img projects__img_left">
                 </div>
-                <div class="projects__letters">
+                <div class="projects__letters projects__letters_left">
                     <h4 class="projects__subtitle">ONE WORLD</h4>
                     <h2 class="projects__title2">TRADE CENTER</h2>
                     <p class="projects__text">Increasing prosperity in our lives can be accomplished by having the right frame of mind. The truth is, our thoughts are very powerful.</p>
@@ -82,10 +82,10 @@
                 </div>
             </article>
             <article class="projects__item projects__item_commerce">
-                <div class="projects__picture">
-                    <img src="./img/project2.webp" alt="building" class="projects__img">
+                <div class="projects__picture projects__picture_right">
+                    <img src="./img/project2.webp" alt="building" class="projects__img projects__img_right">
                 </div>
-                <div class="projects__letters">
+                <div class="projects__letters projects__letters_right">
                     <h4 class="projects__subtitle">INTERNATIONAL</h4>
                     <h2 class="projects__title2">COMMERCE CENTRE</h2>
                     <p class="projects__text">Successful businesses have many things in common, today we'll look at the big 'R' of recognition and how a digital advertising network may help.</p>
@@ -99,7 +99,7 @@
                 </div>
             </article>
         </section>
-        <section class="news">
+        <section class="news" id="news">
             <h2 class="news__title projects__title">LATEST NEWS</h2>
             <div class="news__slider swiper mySwiperNews">
                 <div class="news__wrapper swiper-wrapper">
@@ -188,12 +188,29 @@
                     <img src="./img/gallery5.webp" alt="city" class="gallery__img" data-background="#171d36cc" data-lightense-padding="0">
                 </div>            
             </div>
-            <a href="https://unsplash.com/s/photos/building?orientation=landscape"  target="_blank" class="gallery__button">SEE MORE</a>
+            <div class="gallery__city gallery__town">
+                <div class="gallery__photo">
+                    <img src="./img/slider5.webp" alt="city" class="gallery__img" data-background="#171d36cc" data-lightense-padding="0">
+                </div>
+                <div class="gallery__photo">
+                    <img src="./img/slider4.webp" alt="city" class="gallery__img"  data-background="#171d36cc" data-lightense-padding="0">
+                </div>            
+                <div class="gallery__photo gallery__photo_big">
+                    <img src="./img/slider1.webp" alt="city" class="gallery__img" data-background="#171d36cc" data-lightense-padding="0">
+                </div>            
+                <div class="gallery__photo">
+                    <img src="./img/slider2.webp" alt="city" class="gallery__img" data-background="#171d36cc" data-lightense-padding="0">
+                </div>            
+                <div class="gallery__photo">
+                    <img src="./img/slider3.webp" alt="city" class="gallery__img" data-background="#171d36cc" data-lightense-padding="0">
+                </div>            
+            </div>
+            <button class="gallery__button">SEE MORE</button>
         </section>
         <div class="map"></div>
     </main>
     <footer class="footer">
-        <form action="server-script-url-here" method="GET or POST" class="form">
+        <form action="server-script-url-here" method="GET or POST" class="form" id="form">
             <h3 class="form__title projects__title">GET IN TOUCH</h3>
             <div class="form__wrapper">
                 <div class="form__info">
@@ -213,7 +230,7 @@
             <img class="navigation__logo" src="./img/svg/logo.svg" alt="logo">
             <p class="footer__end">Copyrights © 2020 Montichello</p>
         </div>              
-        <div class="icons">
+        <div class="icons" id="about">
             <a href="http://facebook.com" target="_blank"><svg class="icons__item">
                 <use xlink:href="./img/svg/sprite.svg#facebook"></use>
             </svg></a>
