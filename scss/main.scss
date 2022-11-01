@@ -14,7 +14,13 @@ html {
 }
 
 body {
-    @include font($main-font-family, $main-font-size, 400, 30px, $main-font-color);
+    @include font(
+        $main-font-family,
+        $main-font-size,
+        400,
+        30px,
+        $main-font-color
+    );
     margin: 0;
     padding: 0;
 }
@@ -69,13 +75,14 @@ body {
 
 .header {
     position: relative;
+    height: 100%;
 
     &__text {
         text-align: center;
         margin: 0;
         position: absolute;
         top: 30%;
-        left: 50%;                    
+        left: 50%;
         transform: translate(-50%);
         z-index: 2;
         width: 900px;
@@ -87,7 +94,13 @@ body {
     }
 
     &__subtitle {
-        @include font($title-font-family, $main-font-size, 400, 1.5rem, $extra-font-color);
+        @include font(
+            $title-font-family,
+            $main-font-size,
+            400,
+            1.5rem,
+            $extra-font-color
+        );
         letter-spacing: 0.3em;
     }
 
@@ -117,10 +130,11 @@ body {
         content: '';
         display: block;
         position: absolute;
-        top: 0px; left: 0px;
+        top: 0px;
+        left: 0px;
         width: 100%;
         height: 100%;
-        background: linear-gradient(243.43deg, #7E5AFF 16.9%, #55B7FF 83.27%);
+        background: linear-gradient(243.43deg, #7e5aff 16.9%, #55b7ff 83.27%);
         z-index: 2;
         opacity: 0.8;
     }
@@ -142,7 +156,7 @@ body {
     }
 
     &__burger {
-        display: none;                
+        display: none;
 
         @media (max-width: 768px) {
             &:checked ~ .menu {
@@ -206,12 +220,6 @@ body {
         gap: 40px;
     }
 
-/*     @media (max-width: 768px) {
-        & :first-child {
-            align-self: normal;
-        }
-    } */
-
     @media (max-width: 768px) {
         position: absolute;
         visibility: hidden;
@@ -232,24 +240,12 @@ body {
         position: relative;
         @include font($menu-font-family, 0.9rem, 400, 1rem, $extra-font-color);
 
-/*         &:hover::after {
-            content: '';
-            display: inline-block;
-            width: 60%;
-            height: 1px;
-            background: $extra-font-color;
-            position: absolute;
-            bottom: -5px;
-            left: 70%;
-            transform: translateX(-50%);
-        } */
-
         &:hover::before {
             background: #fff;
         }
 
         &::before {
-            content: "";
+            content: '';
             border: 1px #fff solid;
             display: inline-block;
             width: 9px;
@@ -265,22 +261,6 @@ body {
             box-shadow: inset 0 0 4px 1px #1c5371;
         }
     }
-
-/*     &__link,
-    &__link:active {
-        text-decoration: none;
-        @include font(
-            $main-font-family,
-            $main-font-size,
-            500,
-            26px,
-            $main-font-color
-        );
-
-        &:hover {
-            color: #8a40ee;
-        }
-    } */
 }
 
 .icons {
@@ -308,7 +288,6 @@ body {
 }
 
 .projects {
-
     &__title {
         @include font($title-font-family, 2.5rem, 700, 3rem, $main-font-color);
         text-align: center;
@@ -343,13 +322,52 @@ body {
         }
     }
 
-    &__letters {
+    &__img_left {
+        position: relative;
+        left: 0px;
+        top: 0px;
+        transition: all 3s linear;
+    }
+
+    &__img_right {
+        position: relative;
+        right: 0px;
+        top: 0px;
+        transition: all 3s linear;
+    }
+
+    &__picture_left {
+        background: #55b7ff;
+        position: relative;
+        max-height: 470px;
+    }
+
+    &__picture_right {
+        background: #7e5aff;
+        position: relative;
+        max-height: 470px;
+    }
+
+    &__letters_left {
         max-width: 470px;
-        margin-top: 150px;
+        box-sizing: border-box;
+        padding: 120px 0 0 30px;
+    }
+
+    &__letters_right {
+        max-width: 470px;
+        box-sizing: border-box;
+        padding: 120px 30px 0 0;
     }
 
     &__subtitle {
-        @include font($title-font-family, 1.2rem, 400, 1.4rem, $main-font-color);
+        @include font(
+            $title-font-family,
+            1.2rem,
+            400,
+            1.4rem,
+            $main-font-color
+        );
     }
 
     &__title2 {
@@ -375,9 +393,14 @@ body {
 .button {
     position: relative;
 
-
     .button__summary {
-        @include font($title-font-family, 0.9rem, 400, 1rem, $button-font-color);
+        @include font(
+            $title-font-family,
+            0.9rem,
+            400,
+            1rem,
+            $button-font-color
+        );
         transition: all 1s;
         border: 1px solid;
         box-sizing: border-box;
@@ -387,10 +410,13 @@ body {
         border-radius: 5px;
         list-style: none;
 
-    
         &:hover,
         &:active {
-            background: linear-gradient(237.1deg, #24CCFA 11.16%, #3C7FD4 89.18%);
+            background: linear-gradient(
+                237.1deg,
+                #24ccfa 11.16%,
+                #3c7fd4 89.18%
+            );
             color: #fff;
             cursor: pointer;
         }
@@ -407,8 +433,12 @@ body {
 }
 
 @keyframes ani {
-    0% {font-size: 0;}
-    100% {font-size: 0.9rem;}
+    0% {
+        font-size: 0;
+    }
+    100% {
+        font-size: 0.9rem;
+    }
 }
 
 .news {
@@ -430,7 +460,13 @@ body {
     }
 
     &__subtitle {
-        @include font($title-font-family, 1.2rem, 700, 1.4rem, $main-font-color);
+        @include font(
+            $title-font-family,
+            1.2rem,
+            700,
+            1.4rem,
+            $main-font-color
+        );
         max-width: 300px;
     }
 
@@ -459,7 +495,7 @@ body {
     }
 
     &__date {
-        @include font($title-font-family, 0.8rem, 400, 1rem, #55B7FF);
+        @include font($title-font-family, 0.8rem, 400, 1rem, #55b7ff);
         text-align: left;
     }
 
@@ -472,7 +508,6 @@ body {
         top: 50 px;
         right: -50px;
     }
-
 }
 
 .main__arrow_next {
@@ -511,7 +546,6 @@ body {
         color: black;
         cursor: pointer;
     }
-
 }
 
 .gallery {
@@ -522,7 +556,13 @@ body {
         margin: auto;
         margin-top: 60px;
         display: block;
-        @include font($title-font-family, 0.9rem, 400, 1rem, $button-font-color);
+        @include font(
+            $title-font-family,
+            0.9rem,
+            400,
+            1rem,
+            $button-font-color
+        );
         transition: all 1s;
         border: 1px solid;
         box-sizing: border-box;
@@ -530,10 +570,20 @@ body {
         width: 190px;
         text-align: center;
         border-radius: 5px;
+        background: $extra-font-color;
+
+        &.active {
+            animation: fadeInDownBig;
+            animation-duration: 3s;
+        }
 
         &:hover,
         &:active {
-            background: linear-gradient(237.1deg, #24CCFA 11.16%, #3C7FD4 89.18%);
+            background: linear-gradient(
+                237.1deg,
+                #24ccfa 11.16%,
+                #3c7fd4 89.18%
+            );
             color: #fff;
             cursor: pointer;
         }
@@ -543,6 +593,19 @@ body {
         display: grid;
         grid-template-columns: repeat(4, minmax(260px, auto));
         gap: 10px;
+    }
+
+    .gallery__town {
+        visibility: hidden;
+        height: 0;
+        margin-top: 10px;
+
+        &.active {
+            visibility: visible;
+            height: 100%;
+            animation: fadeInDown;
+            animation-duration: 3s;
+        }
     }
 
     &__img {
@@ -563,7 +626,7 @@ body {
 
 .footer {
     position: relative;
-    background: url('../img/back_footer.jpg'); 
+    background: url('../img/back_footer.jpg');
     padding: 190px 415px;
     display: flex;
     justify-content: space-between;
@@ -612,12 +675,12 @@ body {
         outline: none;
         box-sizing: border-box;
         padding: 12px 0;
-        border-bottom: 1px solid #E5E5E5;
+        border-bottom: 1px solid #e5e5e5;
         @include font($title-font-family, 1rem, 400, 1rem, $button-font-color);
     }
 
     ::placeholder {
-        @include font($title-font-family, 1rem, 400, 1rem, #4B5562);
+        @include font($title-font-family, 1rem, 400, 1rem, #4b5562);
     }
 
     &__icon {
@@ -628,7 +691,7 @@ body {
 
     &__button {
         @include font($title-font-family, 1rem, 400, 1rem, $button-font-color);
-        border: 1px solid #2C4058;
+        border: 1px solid #2c4058;
         border-radius: 5px;
         background: transparent;
         box-sizing: border-box;
@@ -639,10 +702,13 @@ body {
 
         &:hover,
         &:active {
-            background: linear-gradient(237.1deg, #24CCFA 11.16%, #3C7FD4 89.18%);
+            background: linear-gradient(
+                237.1deg,
+                #24ccfa 11.16%,
+                #3c7fd4 89.18%
+            );
             color: #fff;
             cursor: pointer;
         }
     }
 }
-
