@@ -84,6 +84,7 @@ body {
 
 .header {
   position: relative;
+  height: 100%;
 }
 .header__text {
   text-align: center;
@@ -142,8 +143,8 @@ body {
   left: 0px;
   width: 100%;
   height: 100%;
-  background: -o-linear-gradient(206.57deg, #7E5AFF 16.9%, #55B7FF 83.27%);
-  background: linear-gradient(243.43deg, #7E5AFF 16.9%, #55B7FF 83.27%);
+  background: -o-linear-gradient(206.57deg, #7e5aff 16.9%, #55b7ff 83.27%);
+  background: linear-gradient(243.43deg, #7e5aff 16.9%, #55b7ff 83.27%);
   z-index: 2;
   opacity: 0.8;
 }
@@ -232,26 +233,6 @@ body {
   -webkit-transition: all 1s;
   -o-transition: all 1s;
   transition: all 1s;
-  /*     @media (max-width: 768px) {
-          & :first-child {
-              align-self: normal;
-          }
-      } */
-  /*     &__link,
-      &__link:active {
-          text-decoration: none;
-          @include font(
-              $main-font-family,
-              $main-font-size,
-              500,
-              26px,
-              $main-font-color
-          );
-
-          &:hover {
-              color: #8a40ee;
-          }
-      } */
 }
 @media (max-width: 992px) {
   .menu {
@@ -286,17 +267,6 @@ body {
   font-weight: 400;
   line-height: 1rem;
   color: #fff;
-  /*         &:hover::after {
-              content: '';
-              display: inline-block;
-              width: 60%;
-              height: 1px;
-              background: $extra-font-color;
-              position: absolute;
-              bottom: -5px;
-              left: 70%;
-              transform: translateX(-50%);
-          } */
 }
 .menu__item:hover::before {
   background: #fff;
@@ -391,9 +361,43 @@ body {
           flex-direction: row-reverse;
   margin: 150px 0 150px 215px;
 }
-.projects__letters {
+.projects__img_left {
+  position: relative;
+  left: 0px;
+  top: 0px;
+  -webkit-transition: all 3s linear;
+  -o-transition: all 3s linear;
+  transition: all 3s linear;
+}
+.projects__img_right {
+  position: relative;
+  right: 0px;
+  top: 0px;
+  -webkit-transition: all 3s linear;
+  -o-transition: all 3s linear;
+  transition: all 3s linear;
+}
+.projects__picture_left {
+  background: #55b7ff;
+  position: relative;
+  max-height: 470px;
+}
+.projects__picture_right {
+  background: #7e5aff;
+  position: relative;
+  max-height: 470px;
+}
+.projects__letters_left {
   max-width: 470px;
-  margin-top: 150px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 120px 0 0 30px;
+}
+.projects__letters_right {
+  max-width: 470px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 120px 30px 0 0;
 }
 .projects__subtitle {
   font-family: "Montserrat", sans-serif;
@@ -452,8 +456,8 @@ body {
   list-style: none;
 }
 .button .button__summary:hover, .button .button__summary:active {
-  background: -o-linear-gradient(212.9deg, #24CCFA 11.16%, #3C7FD4 89.18%);
-  background: linear-gradient(237.1deg, #24CCFA 11.16%, #3C7FD4 89.18%);
+  background: -o-linear-gradient(212.9deg, #24ccfa 11.16%, #3c7fd4 89.18%);
+  background: linear-gradient(237.1deg, #24ccfa 11.16%, #3c7fd4 89.18%);
   color: #fff;
   cursor: pointer;
 }
@@ -552,7 +556,7 @@ body {
   font-size: 0.8rem;
   font-weight: 400;
   line-height: 1rem;
-  color: #55B7FF;
+  color: #55b7ff;
   text-align: left;
 }
 .news__slider {
@@ -621,10 +625,17 @@ body {
   width: 190px;
   text-align: center;
   border-radius: 5px;
+  background: #fff;
+}
+.gallery__button.active {
+  -webkit-animation: fadeInDownBig;
+          animation: fadeInDownBig;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
 }
 .gallery__button:hover, .gallery__button:active {
-  background: -o-linear-gradient(212.9deg, #24CCFA 11.16%, #3C7FD4 89.18%);
-  background: linear-gradient(237.1deg, #24CCFA 11.16%, #3C7FD4 89.18%);
+  background: -o-linear-gradient(212.9deg, #24ccfa 11.16%, #3c7fd4 89.18%);
+  background: linear-gradient(237.1deg, #24ccfa 11.16%, #3c7fd4 89.18%);
   color: #fff;
   cursor: pointer;
 }
@@ -632,6 +643,19 @@ body {
   display: grid;
   grid-template-columns: repeat(4, minmax(260px, auto));
   gap: 10px;
+}
+.gallery .gallery__town {
+  visibility: hidden;
+  height: 0;
+  margin-top: 10px;
+}
+.gallery .gallery__town.active {
+  visibility: visible;
+  height: 100%;
+  -webkit-animation: fadeInDown;
+          animation: fadeInDown;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
 }
 .gallery__img {
   width: 100%;
@@ -714,7 +738,7 @@ body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 12px 0;
-  border-bottom: 1px solid #E5E5E5;
+  border-bottom: 1px solid #e5e5e5;
   font-family: "Montserrat", sans-serif;
   font-size: 1rem;
   font-weight: 400;
@@ -726,35 +750,35 @@ body {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1rem;
-  color: #4B5562;
+  color: #4b5562;
 }
 .form ::-moz-placeholder {
   font-family: "Montserrat", sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1rem;
-  color: #4B5562;
+  color: #4b5562;
 }
 .form :-ms-input-placeholder {
   font-family: "Montserrat", sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1rem;
-  color: #4B5562;
+  color: #4b5562;
 }
 .form ::-ms-input-placeholder {
   font-family: "Montserrat", sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1rem;
-  color: #4B5562;
+  color: #4b5562;
 }
 .form ::placeholder {
   font-family: "Montserrat", sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1rem;
-  color: #4B5562;
+  color: #4b5562;
 }
 .form__icon {
   width: 18px;
@@ -767,7 +791,7 @@ body {
   font-weight: 400;
   line-height: 1rem;
   color: #000;
-  border: 1px solid #2C4058;
+  border: 1px solid #2c4058;
   border-radius: 5px;
   background: transparent;
   -webkit-box-sizing: border-box;
@@ -781,8 +805,8 @@ body {
   transition: all 1s;
 }
 .form__button:hover, .form__button:active {
-  background: -o-linear-gradient(212.9deg, #24CCFA 11.16%, #3C7FD4 89.18%);
-  background: linear-gradient(237.1deg, #24CCFA 11.16%, #3C7FD4 89.18%);
+  background: -o-linear-gradient(212.9deg, #24ccfa 11.16%, #3c7fd4 89.18%);
+  background: linear-gradient(237.1deg, #24ccfa 11.16%, #3c7fd4 89.18%);
   color: #fff;
   cursor: pointer;
 }
