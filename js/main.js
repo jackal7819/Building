@@ -1,12 +1,13 @@
-'use strict'
+'use strict';
 
 let arrow = document.querySelector('.header__arrow');
 arrow.addEventListener('click', () => {
-    window.scrollTo({ top: 1100, behavior: 'smooth' });
+    window.scrollTo({ top: 800, behavior: 'smooth' });
 });
 
 let swiperHeader = new Swiper('.mySwiperHeader', {
     effect: 'fade',
+    direction: 'vertical',
     pagination: {
         el: '.back__pagination',
         clickable: true,
@@ -32,19 +33,19 @@ let swiperMain = new Swiper('.mySwiperNews', {
 window.addEventListener(
     'load',
     function () {
-        var el = document.querySelectorAll('.gallery__img');
-        Lightense(el);
+        let item = document.querySelectorAll('.gallery__img');
+        Lightense(item);
     },
     false
 );
 
 function initMap() {
-    const icon = {
+    let icon = {
         url: './img/svg/marker6.svg',
         scaledSize: new google.maps.Size(30, 30),
     };
 
-    const map = new google.maps.Map(document.querySelector('.map'), {
+    let map = new google.maps.Map(document.querySelector('.map'), {
         center: { lat: 40.6912018, lng: -73.9110138 },
         zoom: 12,
         styles: [
@@ -229,3 +230,32 @@ function initMap() {
 }
 
 window.initMap = initMap;
+
+function grid() {
+    let btnGallery = document.querySelector('.gallery__button');
+    let gallery = document.querySelector('.gallery__town');
+
+    btnGallery.addEventListener('click', () => {
+        btnGallery.classList.toggle('active');
+        gallery.classList.toggle('active');
+    });
+}
+
+grid();
+
+function scrollFunction() {
+    let flyL = document.querySelector('.projects__img_left');
+    let flyR = document.querySelector('.projects__img_right');
+
+    if (document.documentElement.scrollTop >= 700) {
+        flyL.style.left = '215px';
+        flyL.style.top = '55px';
+    }
+
+    if (document.documentElement.scrollTop >= 1000) {
+        flyR.style.right = '215px';
+        flyR.style.top = '55px';
+    }
+}
+
+window.addEventListener('scroll', scrollFunction);
