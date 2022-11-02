@@ -262,7 +262,7 @@ function scrollFunction() {
     let flyR = document.querySelector('.projects__img_right');
 
     if (document.documentElement.scrollTop >= 700 && window.innerWidth >= 1500) {
-        flyL.style.left = '215px';
+        flyL.style.left = '170px';
         flyL.style.top = '55px';
     }
 
@@ -271,7 +271,7 @@ function scrollFunction() {
     }
 
     if (document.documentElement.scrollTop >= 1000 && window.innerWidth >= 1500) {
-        flyR.style.right = '215px';
+        flyR.style.right = '170px';
         flyR.style.top = '55px';
     }
 
